@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoVerse Intelligence Dashboard</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --accent: #ec4899;
+            --dark: #0f172a;
+            --gray: #64748b;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, var(--dark) 0%, #1e293b 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle { color: var(--gray); font-size: 1.2rem; }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.08);
+        }
+        
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        .card-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+        
+        .card-desc {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px;
+            color: var(--gray);
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CryptoVerse Intelligence 🪐</h1>
+            <p class="subtitle">Automated intelligence pipeline for cryptocurrency ecosystem analysis</p>
+        </header>
+        
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <h2 class="card-title">Live Data Feed</h2>
+                <p class="card-desc">Real-time market data, price alerts, and trading signals aggregated from multiple exchanges.</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">🔍</div>
+                <h2 class="card-title">Intelligence Reports</h2>
+                <p class="card-desc">Automated analysis reports on market trends, whale movements, and sentiment tracking.</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">📁</div>
+                <h2 class="card-title">Transcripts Archive</h2>
+                <p class="card-desc">Audio/video call transcripts and meeting notes for team collaboration.</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">⚙️</div>
+                <h2 class="card-title">System Status</h2>
+                <p class="card-desc">Pipeline health monitoring, uptime metrics, and automated maintenance tasks.</p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>CryptoVerse Intelligence Pipeline | Version 1.0</p>
+            <p style="font-size: 0.9rem; margin-top: 10px;">Powered by CoPaw AI Assistant</p>
+        </footer>
+    </div>
+</body>
+</html>
