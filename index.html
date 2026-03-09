@@ -61,7 +61,6 @@
             padding: 40px 20px;
         }
 
-        /* --- Header Section --- */
         header {
             display: flex;
             justify-content: space-between;
@@ -115,14 +114,12 @@
             animation: pulse-glow 2s infinite;
         }
 
-        /* --- Grid Layout --- */
         .dashboard-grid {
             display: grid;
             grid-template-columns: repeat(12, 1fr);
             gap: 20px;
         }
 
-        /* --- Global Knowledge Panel --- */
         .knowledge-vault {
             grid-column: span 8;
             background: var(--bg-surface);
@@ -132,17 +129,6 @@
             position: relative;
             overflow: hidden;
             box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
-        }
-
-        .knowledge-vault::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
-            pointer-events: none;
         }
 
         .vault-header {
@@ -206,7 +192,6 @@
             font-size: 0.9rem;
         }
 
-        /* --- Forensic Reports Panel --- */
         .forensic-panel {
             grid-column: span 4;
             display: grid;
@@ -221,21 +206,10 @@
             transition: 0.3s;
         }
 
-        .f-card:hover {
-            border-color: var(--accent-cyan);
-            box-shadow: 0 0 30px rgba(6, 182, 212, 0.1);
-        }
-
         .f-card h3 {
             font-family: 'Outfit', sans-serif;
             font-size: 1.3rem;
             margin-bottom: 10px;
-        }
-
-        .f-card p {
-            color: var(--text-dim);
-            font-size: 0.85rem;
-            margin-bottom: 20px;
         }
 
         .button {
@@ -251,37 +225,6 @@
             transition: 0.2s;
         }
 
-        .button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px var(--accent-glow);
-        }
-
-        .button.ghost {
-            background: transparent;
-            border: 1px solid var(--border);
-            box-shadow: none;
-        }
-
-        .button.ghost:hover {
-            background: var(--glass);
-        }
-
-        /* --- Footer --- */
-        footer {
-            margin-top: 100px;
-            text-align: center;
-            padding: 40px;
-            border-top: 1px solid var(--border);
-        }
-
-        .footer-tag {
-            font-family: 'JetBrains Mono', monospace;
-            color: var(--text-dim);
-            font-size: 0.7rem;
-            letter-spacing: 0.1em;
-        }
-
-        /* --- Animations --- */
         @keyframes pulse-glow {
             0% {
                 box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
@@ -301,16 +244,6 @@
             .knowledge-vault,
             .forensic-panel {
                 grid-column: span 12;
-            }
-
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 20px;
-            }
-
-            .system-status {
-                text-align: left;
             }
         }
     </style>
@@ -332,57 +265,35 @@
         </header>
 
         <div class="dashboard-grid">
-            <!-- Global Knowledge Vault -->
             <section class="knowledge-vault">
                 <div class="vault-header">
                     <h2>Knowledge Vault</h2>
                     <span class="recursive-badge">Recursive Learning v2.4</span>
                 </div>
-                <div class="knowledge-items">
+                <div class="knowledge-items" id="knowledge-items">
+                    <!-- Dynamic Items -->
                     <div class="k-item">
                         <span class="k-label">Lesson-Distilled · Today 03:15</span>
                         <h3 class="k-title">Forensic Hook Analysis: Cowen Formula</h3>
                         <p class="k-summary">Distilled patterns of curiosity gap openings used by Benjamin Cowen to
                             maximize retention during market uncertainty.</p>
                     </div>
-                    <div class="k-item">
-                        <span class="k-label">Market-Intelligence · Yesterday 21:00</span>
-                        <h3 class="k-title">Social Sentiment Precursor: Historical Data</h3>
-                        <p class="k-summary">How IntoTheCryptoVerse community sentiment often precedes Bitcoin
-                            volatility cycles by 48-72 hours.</p>
-                    </div>
-                </div>
-                <div style="margin-top: 30px;">
-                    <a href="./knowledge_vault/" class="button">Explore All Knowledge</a>
                 </div>
             </section>
 
-            <!-- Sidebar / Forensic Panels -->
             <section class="forensic-panel">
                 <div class="f-card">
                     <h3>Viral Deconstructions</h3>
                     <p>reverse-engineered success formulas using the youtube-video-analyst skill.</p>
-                    <a href="./reports/" class="button ghost">View Blueprints</a>
+                    <a href="./reports/" class="button">View Blueprints</a>
                 </div>
-
                 <div class="f-card">
                     <h3>Raw Transcripts</h3>
                     <p>Cleaned, indexed, and AI-optimized text of every video uploaded this week.</p>
-                    <a href="./transcripts/" class="button ghost">Open Archives</a>
-                </div>
-
-                <div class="f-card">
-                    <span class="k-label">Self-Correction</span>
-                    <h3>Agent Memory</h3>
-                    <p>The latest distilled lessons from the assistant's own performance logs.</p>
-                    <a href="./memory/" class="button ghost">Memory Inspector</a>
+                    <a href="./transcripts/" class="button">Open Archives</a>
                 </div>
             </section>
         </div>
-
-        <footer>
-            <p class="footer-tag">PRO-LEVEL INTELLIGENCE · POWERED BY COPAW AGENT · RUNNING ON D:/OPENCOPOW</p>
-        </footer>
     </div>
 </body>
 
