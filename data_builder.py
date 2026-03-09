@@ -21,11 +21,12 @@ def build_data():
             return ""
 
     # Transcripts
-    for f in glob.glob(os.path.join(base_path, "transcripts", "*.txt")):
-        data["transcripts"].append({
-            "name": os.path.basename(f),
-            "content": read_file(f)
-        })
+    for ext in ["*.txt", "*.md"]:
+        for f in glob.glob(os.path.join(base_path, "transcripts", ext)):
+            data["transcripts"].append({
+                "name": os.path.basename(f),
+                "content": read_file(f)
+            })
         
     # Reports
     for f in glob.glob(os.path.join(base_path, "reports", "*.md")):
