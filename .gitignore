@@ -1,0 +1,23 @@
+# Local Intelligence Logs
+memory/
+MEMORY.md
+AGENTS.md
+HEARTBEAT.md
+PROFILE.md
+*.py
+*.txt
+venv/
+.env
+
+# Allow public dashboard assets
+!index.html
+!docs/
+!data.js
+!knowledge_vault/
+!reports/
+!transcripts/
+
+# But exclude raw scripts inside them if any
+knowledge_vault/*.py
+reports/*.py
+transcripts/*.py

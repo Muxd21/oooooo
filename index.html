@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CryptoVerse Intelligence · Pro Edition</title>
+    <title>Benjamin Cowen · Forensic Partner</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap"
         rel="stylesheet">
-    <!-- MARKDOWN PARSER -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="data.js"></script>
     <style>
@@ -74,7 +73,7 @@
 
         .branding h1 {
             font-family: 'Outfit', sans-serif;
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 700;
             letter-spacing: -0.04em;
             background: linear-gradient(135deg, #fff 30%, var(--accent-primary) 100%);
@@ -87,7 +86,7 @@
         .branding p {
             font-family: 'JetBrains Mono', monospace;
             color: var(--accent-cyan);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.2em;
         }
@@ -113,7 +112,6 @@
             animation: pulse-glow 2s infinite;
         }
 
-        /* --- Navigation --- */
         nav {
             display: flex;
             gap: 20px;
@@ -131,6 +129,7 @@
             cursor: pointer;
             transition: 0.2s;
             position: relative;
+            padding: 5px 0;
         }
 
         .nav-btn:hover {
@@ -152,7 +151,6 @@
             box-shadow: 0 0 10px var(--accent-glow);
         }
 
-        /* --- Main Content Area --- */
         .content-area {
             display: grid;
             grid-template-columns: 350px 1fr;
@@ -165,7 +163,7 @@
             border: 1px solid var(--border);
             border-radius: 20px;
             padding: 20px;
-            max-height: 700px;
+            max-height: 750px;
             overflow-y: auto;
         }
 
@@ -174,9 +172,10 @@
             border: 1px solid var(--border);
             border-radius: 24px;
             padding: 40px;
-            min-height: 700px;
+            min-height: 750px;
             box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
             overflow-y: auto;
+            position: relative;
         }
 
         .k-item {
@@ -192,11 +191,13 @@
         .k-item:hover {
             border-color: var(--accent-primary);
             background: rgba(255, 255, 255, 0.05);
+            transform: translateX(5px);
         }
 
         .k-item.active {
             border-color: var(--accent-primary);
             background: rgba(59, 130, 246, 0.1);
+            box-shadow: inset 0 0 10px rgba(59, 130, 246, 0.2);
         }
 
         .k-label {
@@ -210,24 +211,29 @@
         .k-title {
             font-weight: 600;
             font-size: 0.95rem;
+            color: #fff;
         }
 
-        /* Markdown Styling */
         .markdown-content h1 {
             font-family: 'Outfit', sans-serif;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             color: #fff;
+            font-size: 2.2rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 15px;
         }
 
         .markdown-content h2 {
             font-family: 'Outfit', sans-serif;
-            margin: 30px 0 15px;
+            margin: 35px 0 15px;
             color: var(--accent-cyan);
+            font-size: 1.5rem;
         }
 
         .markdown-content p {
-            margin-bottom: 15px;
-            color: var(--text-main);
+            margin-bottom: 18px;
+            color: #cbd5e1;
+            font-size: 1.05rem;
         }
 
         .markdown-content ul {
@@ -235,15 +241,25 @@
         }
 
         .markdown-content li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            color: #cbd5e1;
         }
 
         .markdown-content code {
             background: #1a2333;
-            padding: 2px 5px;
+            padding: 2px 6px;
             border-radius: 4px;
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.9em;
+            color: var(--accent-cyan);
+        }
+
+        .markdown-content blockquote {
+            border-left: 4px solid var(--accent-primary);
+            padding-left: 20px;
+            color: var(--text-dim);
+            font-style: italic;
+            margin: 20px 0;
         }
 
         @keyframes pulse-glow {
@@ -259,6 +275,16 @@
                 box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
             }
         }
+
+        @media (max-width: 1024px) {
+            .content-area {
+                grid-template-columns: 1fr;
+            }
+
+            .list-panel {
+                max-height: 300px;
+            }
+        }
     </style>
 </head>
 
@@ -266,13 +292,13 @@
     <div class="container">
         <header>
             <div class="branding">
-                <h1>CryptoVerse Intelligence</h1>
-                <p>Advanced Forensic Video & Market Analytics</p>
+                <h1>Benjamin Cowen Synthesis</h1>
+                <p>Forensic Partner Analytics · Recursive Data Stream</p>
             </div>
             <div class="system-status">
                 <div class="pulse-badge">
                     <div class="pulse-dot"></div>
-                    <span id="last-updated">Last Sync: ...</span>
+                    <span id="last-updated">Real-time Sync: Active</span>
                 </div>
             </div>
         </header>
@@ -289,8 +315,9 @@
             </div>
             <div class="detail-panel" id="detail-panel">
                 <div class="markdown-content" id="markdown-viewer">
-                    <h1>Select an item to view intelligence</h1>
-                    <p>Select an item from the sidebar to visualize the distilled forensic analysis.</p>
+                    <h1>Ready for Analysis</h1>
+                    <p>Select a distilled forensic report from the sidebar to visualize the latest market thesis from
+                        Benjamin's channel.</p>
                 </div>
             </div>
         </div>
@@ -304,10 +331,10 @@
 
         function init() {
             if (typeof CRYPTOVERSE_DATA === 'undefined') {
-                detailPanel.innerHTML = "<h1>Data Load Error</h1><p>The manifest.js file could not be found or is empty. Please run the build script.</p>";
+                detailPanel.innerHTML = "<h1>Forensic Hub Offline</h1><p>The shared intelligence manifest could not be loaded. Ensure data_builder.py has executed.</p>";
                 return;
             }
-            updatedLabel.innerText = "Sync: " + CRYPTOVERSE_DATA.last_updated;
+            updatedLabel.innerText = "Cycles Synced: " + CRYPTOVERSE_DATA.last_updated;
             renderList('knowledge');
             setupNav();
         }
@@ -318,6 +345,10 @@
                     document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
                     btn.classList.add('active');
                     currentSection = btn.dataset.section;
+
+                    // Clear detail view on section switch
+                    detailPanel.innerHTML = `<h1>Section: ${btn.innerText}</h1><p>Select an item from the sidebar to begin forensic review.</p>`;
+
                     renderList(currentSection);
                 };
             });
@@ -325,28 +356,27 @@
 
         function renderList(section) {
             const data = CRYPTOVERSE_DATA[section] || [];
-            listPanel.innerHTML = data.map((item, index) => `
+            listPanel.innerHTML = data.map((item, index) => {
+                const title = item.name.replace('.md', '').replace('.txt', '').replace(/_/g, ' ').replace(/-/g, ' ');
+                return `
                 <div class="k-item" onclick="viewDetail('${section}', ${index})">
-                    <span class="k-label">${item.name}</span>
-                    <h3 class="k-title">${item.name.replace('.md', '').replace('.txt', '').replace(/_/g, ' ')}</h3>
+                    <span class="k-label">DATA-ID: ${section.toUpperCase()}#${index + 1}</span>
+                    <h3 class="k-title">${title}</h3>
                 </div>
-            `).join('') || '<p style="padding: 20px; color: #666;">No items found in this category.</p>';
+                `;
+            }).join('') || '<p style="padding: 20px; color: #666; font-family: JetBrains Mono; font-size: 0.8rem;">[SYSTEM ERROR]: NO DATA ENTRIES FOUND FOR THIS REGISTER.</p>';
         }
 
         function viewDetail(section, index) {
             const item = CRYPTOVERSE_DATA[section][index];
             const content = item.content;
 
-            // Highlight selected item
             document.querySelectorAll('.k-item').forEach((it, idx) => {
                 it.classList.toggle('active', idx === index);
             });
 
-            // Render markdown or plain text
             const isMarkdown = item.name.endsWith('.md');
-            detailPanel.innerHTML = isMarkdown ? marked.parse(content) : `<pre style="white-space: pre-wrap; color: var(--text-main); font-family: inherit;">${content}</pre>`;
-
-            // Scroll to top of detail panel
+            detailPanel.innerHTML = isMarkdown ? marked.parse(content) : `<pre style="white-space: pre-wrap; color: var(--text-main); font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; background: #111; padding: 20px; border-radius: 12px; border: 1px solid var(--border);">${content}</pre>`;
             document.querySelector('.detail-panel').scrollTop = 0;
         }
 
